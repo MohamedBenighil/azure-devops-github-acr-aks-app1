@@ -16,7 +16,7 @@ variables:
   containerRegistry: 'benighil.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
-  imagePullSecret: 'benighil182176a7-auth'
+  imagePullSecret: 'benighil182176a7-auth' # we will use it later
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -25,6 +25,7 @@ variables:
 stages:
 - stage: Build
   displayName: Build stage
+  
   jobs:
   - job: Build
     displayName: Build
@@ -47,7 +48,7 @@ stages:
 - stage: Deploy
   displayName: Deploy stage
   dependsOn: Build
-
+  
   jobs:
   - deployment: Deploy
     displayName: Deploy
