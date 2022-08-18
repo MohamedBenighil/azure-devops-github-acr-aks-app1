@@ -37,6 +37,7 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)  
+    # CopyFiles@2 is a pre-requist to PublishBuildArtifacts@1 task, which makes artifact public to all pipelines, even release 
     - task: CopyFiles@2
       inputs:
         SourceFolder: '$(System.DefaultWorkingDirectory)/Git-Repository-files/kube-manifests'
