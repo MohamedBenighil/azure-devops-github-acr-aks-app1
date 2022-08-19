@@ -23,6 +23,9 @@
 
 trigger:
 - master
+variables:
+  containerRegistry: "containerRegistry"
+  imageName: "benighil"
 
 stages:
 - stage: "Build_Docker_image" 
@@ -33,7 +36,7 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: "manual-benighil-svc"
-        repository: 'benighil'
+        containerRegistry: $(containerRegistry)
+        repository: $(imageName)
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
