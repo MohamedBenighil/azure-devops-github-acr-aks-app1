@@ -28,7 +28,7 @@ stages:
 - stage: "Build_Docker_image" 
   displayName: "Build stage"
   jobs:
-  - job: "Build Docker image"
+  - job: "Build_Docker_image"
     displayName: "Build docker image"
     steps:
     - task: Docker@2
