@@ -24,8 +24,6 @@
 trigger:
 - master
 
-pool:
-- vmImage: ubuntu-latest
 stages:
   - stage: Build Docker image 
     displayName: Build stage 
