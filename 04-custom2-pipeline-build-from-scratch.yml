@@ -25,15 +25,15 @@ trigger:
 - master
 
 stages:
-  - stage: "Build Docker image" 
-    displayName: "Build stage"
-    jobs:
-    - job: "Build Docker image"
-      displayName: "Build docker image"
-      steps:
-      - task: Docker@2
-        inputs:
-          containerRegistry: "manual-benighil-svc"
-          repository: 'benighil'
-          command: 'buildAndPush'
-          Dockerfile: '**/Dockerfile'
+- stage: "Build Docker image" 
+  displayName: "Build stage"
+  jobs:
+  - job: "Build Docker image"
+    displayName: "Build docker image"
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: "manual-benighil-svc"
+        repository: 'benighil'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
