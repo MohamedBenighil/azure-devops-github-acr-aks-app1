@@ -24,7 +24,7 @@
 trigger:
 - master
 variables:
-  containerRegistry: "manual-benighil-svc"
+  containerRegistry: "benighil"
   imageName: "benighil"
 
 stages:
